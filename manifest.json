@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Refresh",
+  "version": "1.0",
+  "description": "A simple extension to auto-refresh a page at a given interval.",
+  "permissions": ["storage", "alarms", "tabs"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  }
+}
