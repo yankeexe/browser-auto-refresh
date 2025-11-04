@@ -1,8 +1,11 @@
-# Auto Refresh Chrome Extension
+# 🔃 Auto Refresh Extension
 
-This is a simple Chrome extension that allows you to automatically refresh a page at a given interval.
+Chrome extension that allows you to automatically refresh a page at a given interval.
 
-## Features
+<img src="https://github.com/user-attachments/assets/cdacdd36-28c0-4ab9-99ac-ce0705fbabfe" alt="Auto Refresh Extension Demo" width="600">
+
+
+## ⚡ Features
 
 -   Refresh any page at a specified interval in seconds.
 -   Set a duration in minutes for the refresh to continue, or let it run infinitely.
@@ -10,7 +13,7 @@ This is a simple Chrome extension that allows you to automatically refresh a pag
 -   Status indicator to show whether the refresh is active or inactive.
 -   Input fields are disabled when the refresh is active to prevent accidental changes.
 
-## How to Install
+## ⇊ How to Install
 
 1.  Clone this repository or download the source code.
 2.  Open Chrome and navigate to `chrome://extensions`.
@@ -18,7 +21,7 @@ This is a simple Chrome extension that allows you to automatically refresh a pag
 4.  Click on "Load unpacked" and select the directory where you saved the source code.
 5.  The extension should now be installed and ready to use.
 
-## How to Use
+## 👆 How to Use
 
 1.  Click on the extension icon in the Chrome toolbar to open the popup.
 2.  Enter the desired refresh interval in seconds.
