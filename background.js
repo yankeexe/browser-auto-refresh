@@ -2,7 +2,7 @@ let stopTimeout = null;
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'start') {
-    const { interval, duration } = request;
+    const { interval, duration, durationUnit } = request;
     chrome.storage.local.set({ interval, isRefreshing: true });
 
     // Clear any existing alarm
@@ -18,6 +18,13 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     });
 
     if (duration > 0) {
+      let durationInMs = 0;
+      if (durationUnit === 'seconds') {
+        durationInMs = duration * 1000;
+      } else {
+        durationInMs = duration * 60 * 1000;
+      }
+
       stopTimeout = setTimeout(() => {
         chrome.alarms.clear('refresh');
         chrome.storage.local.set({ isRefreshing: false });
@@ -25,7 +32,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
           clearTimeout(stopTimeout);
           stopTimeout = null;
         }
-      }, duration * 60 * 1000);
+      }, durationInMs);
     }
   } else if (request.action === 'stop') {
     chrome.alarms.clear('refresh');
